@@ -15,7 +15,7 @@ const routes: Routes = [
     {path:"register", component:RegisterComponent},
     {path:"profile", component:ProfileComponent},
     {path:"all", component:AllUsersComponent},
-    {path:"all:/id", component:SingleUserComponent},
+    {path:"all/:id", component:SingleUserComponent},
     {path:"edit/:id", component:EditUserComponent}
   ]},
   {path:"post", children:[

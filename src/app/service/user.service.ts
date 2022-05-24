@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+public userData = {name: ""}
+public isLoggedIn = false
+
 host = "http://localhost:3000/user/"
   constructor(private _httpt:HttpClient) { }
 
@@ -16,7 +19,19 @@ host = "http://localhost:3000/user/"
     return this._httpt.post(`${this.host}login`, data)
   }
 
+  logoutUser() : Observable <any> {
+    return this._httpt.post(`${this.host}logout`, null)
+  }
+
   allUsers() : Observable <any> {
     return this._httpt.get(`${this.host}showAll`)
+  }
+
+  me() : Observable <any> {
+    return this._httpt.post(`${this.host}me`, null)
+  }
+
+  delUser(id: string) : Observable <any> {
+    return this._httpt.delete(`${this.host}showAll/${id}`)
   }
 }

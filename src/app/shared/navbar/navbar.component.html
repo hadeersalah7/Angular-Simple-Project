@@ -11,28 +11,40 @@
 
 
         <li>
-            <a class="nav-link active text-white" aria-current="page" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">LOGIN</a>
+            <a class="nav-link active text-white" aria-current="page" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" routerLink="/" *ngIf="!_user.isLoggedIn">LOGIN</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/user/register">Register</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/user/profile">Profile</a>
+            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/user/register" *ngIf="!_user.isLoggedIn">Register</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/user/all">All Users</a>
+            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/user/profile" *ngIf="_user.isLoggedIn">Profile</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/post/add">Add Post</a>
+            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/user/all" *ngIf="_user.isLoggedIn">All Users</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/post/myPosts">All Posts</a>
+            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/post/add" *ngIf="_user.isLoggedIn">Add Post</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/post/myPosts" *ngIf="_user.isLoggedIn">All Posts</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLinkActive="active"
+          *ngIf="_user.isLoggedIn">{{ _user.userData?.name }}
+            <button class="btn btn-danger" (click)="logMeOut()">Logout</button></a>
+      </li>
 
         </ul>
       </div>

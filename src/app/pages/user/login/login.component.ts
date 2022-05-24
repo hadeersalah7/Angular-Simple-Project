@@ -30,11 +30,13 @@ login(){
 this._user.loginUser(this.loginForm.value).subscribe(
   res => {
     localStorage.setItem('appToken', res.data.token)
+    this._user.userData = res.data.user
   },
   (e) => {
     e.msg = 'Error in loading form'
   },
   () => {
+    this._user.isLoggedIn= true
     this._router.navigateByUrl('user/all')
   }
 )
