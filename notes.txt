@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "8ea356ee-f23a-4d40-8828-160d7193f291",
+		"name": "APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "RegisterNewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"age\": 20,\r\n    \"name\": \"hadeer\",\r\n    \"email\": \"hadeersala5@gmail.com\",\r\n    \"phone\":\"01111111111\",\r\n    \"password\": \"123456\",\r\n    \"gender\": \"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/user/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"hadeer1@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/user/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ0MTg1NmQxMTMyNGE1MjRlYzA5ZWEiLCJpYXQiOjE2NDg3NzIwOTd9.KaEzf0N7vkMuN6LGKB1i2UoCixW4wb_j80Y-aqj0GZU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hadeer1@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/user/showAll",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ0MTg1NmQxMTMyNGE1MjRlYzA5ZWEiLCJpYXQiOjE2NTI1NDUyMDF9.cRFpCldqnLj94a2E7SdAxOZueJByhDcpWZOhZt7ew3I",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/user/showAll/623e276369b3f99ef75e1d69",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"showAll",
+								"623e276369b3f99ef75e1d69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ0MTg1NmQxMTMyNGE1MjRlYzA5ZWEiLCJpYXQiOjE2NTM0MDQyMjF9.mfJ2PCZPcCdZaBLUK5P3ONZyeCpPxcixYSH0VUdeRao",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/user/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "addPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ2MWQ4ZjQzODFlMWYwNjFkY2E5ZjUiLCJpYXQiOjE2NDg3NjIyNzB9.4flMDz_yZq_wy425pRCr_7oeFOoveBe7qSC_1WHYQ-c",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"postType\": \"txt\",\r\n     \"content\": \"new post here\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/post/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allPosts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ2MWQ4ZjQzODFlMWYwNjFkY2E5ZjUiLCJpYXQiOjE2NDg3NjIyNzB9.4flMDz_yZq_wy425pRCr_7oeFOoveBe7qSC_1WHYQ-c",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postType\": \"txt\",\r\n     \"content\": \"new post here\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/post/myPosts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"myPosts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "localhost:3000",
+			"type": "default"
+		}
+	]
+}

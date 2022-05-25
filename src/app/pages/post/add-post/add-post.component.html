@@ -1,1 +1,24 @@
-<p>add-post works!</p>
+
+
+<form #post="ngForm" (ngSubmit)="newPost(post)">
+
+  <div class="input-group my-3">
+    <select class="custom-select" id="inputGroupSelect02">
+      <option selected>Choose Post Type...</option>
+      <option value="1" ngModel #content="ngModel" name="content"> Content</option>
+      <option value="2" ngModel #image="ngModel" name="image">Image</option>
+      <option value="3" ngModel #file="ngModel" name="file">File</option>
+    </select><br>
+</div>
+
+<input class="form-control my-2"  placeholder="Content" #content="ngModel" name="content" ngModel>
+
+  <div class="form-group">
+    <!-- <label for="exampleFormControlTextarea1"></label> -->
+    <textarea class="form-control " id="exampleFormControlTextarea1" rows="3"  placeholder="What's On Your Mind?" ngModel #textarea="ngModel" name="textarea"></textarea>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary my-2" type="button" (click)="newPost(post)" >Add Post</button><br>
+      <button (click)="likeButton()" class="btn btn-primary"><span><i class="ri-thumb-up-line mx-2"></i></span>Like</button>
+    </div>
+  </div>
+</form>
